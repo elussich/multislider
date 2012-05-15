@@ -1,0 +1,40 @@
+.multiSliderContainer {
+	height: 40px;
+	margin: 0 0 20px;
+}
+.multiSliderDivision {
+	-o-box-shadow: 0 2px 5px -1px #776655 inset;
+	-moz-box-shadow: 0 2px 5px -1px #776655 inset;
+	-webkit-box-shadow: 0 2px 5px -1px #776655 inset;
+	-ms-box-shadow: 0 2px 5px -1px #776655 inset;
+	box-shadow: 0 2px 5px -1px #776655 inset;
+	background-color: rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #F7D9BA;
+}
+.multiSliderDivision span {
+	font-size: 12px;
+	font-weight: bold;
+	margin: 20px 0 0 10px;
+	display: inline-block;
+}
+.multiSliderHandler {
+	cursor: col-resize;
+	top: -3px;
+	background-color: #ddd;
+	background-image: url('../images/purty_wood.png');
+	width: 5px;
+	height: 44px;
+	border-width: 1px 0;
+	border-style: solid;
+	border-color: #FFFFFF #88745C #88745C;
+	-o-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-ms-border-radius: 3px;
+	border-radius: 3px;
+	-o-box-shadow: 0 1px 4px 0px #555;
+	-moz-box-shadow: 0 1px 4px 0px #555;
+	-webkit-box-shadow: 0 1px 4px 0px #555;
+	-ms-box-shadow: 0 1px 4px 0px #555;
+	box-shadow: 0 1px 4px 0px #555;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Multiple Slider</title>
+	<link rel="stylesheet" type="text/css" href="css/jquery.multiSlider.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css"> 
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.20.custom.min.js"></script>
+	<script type="text/javascript" src="js/jquery.ui.multislider.js"></script>
+	<script type="text/javascript">
+	
+		// on DOM ready
+		$(function() {
+		
+			// init with defaults
+			$('#Content1').multislider();
+			
+			// no names, two colors looped
+			$('#Content2').multislider(
+				{
+					percents: 5,
+					names: [""],
+					// alternate backgrounds
+					styles: [
+						{'background-image': 'url("images/wood_pattern.png")'},
+						{'background-image': ''}
+					]
+				}
+			);
+
+			// bind some events
+			$('#Content3').multislider(
+				{
+					percents: [50, 30, 20],
+					styles: [
+						{'background-color': '#fec118'},
+						{'background-color': '#008bce'},
+						{'background-color': '#f16623'}
+					],
+					created: function(event, ui) {
+						// write each percentage inside the cell
+						for (var i = 0; i < ui.percents.length; i++) {
+							ui.container.find('.multiSliderDivision').eq(i).find('span').text(ui.percents[i] + "%");
+						}
+					},
+					handlerMove: function(event, ui) {
+						// write each percentage inside the cell
+						for (var i = 0; i < ui.percents.length; i++) {
+							$('#Content3').find('.multiSliderDivision').eq(i).find('span').text(ui.percents[i] + "%");
+						}
+					}
+				}
+			);
+
+			// you can change percents on the fly, dinamically, instantly...
+			$('#Change').click(function() {
+				// 'change' method, one parameter: array of new percents
+				$('#Content3').multislider('change',
+					[20, 40, 15, 25], {
+						changed: function(event, ui) {
+							for (var i = 0; i < ui.percents.length; i++) {
+								ui.container.find('.multiSliderDivision').eq(i).find('span').text(ui.percents[i] + "%");
+							}
+						}
+					}					
+				);				
+				return false;
+
+			});
+			
+		});
+	</script>
+</head>
+
+<body>
+	<h1>Multi-slider: a jQuery plugin</h1>
+	<h3>An easy and useful way to set multiple percentages through sliders</h3>
+	<div class="box">
+		<h2>Example 1:</h2>
+		<h4>Three even divisions by default.</h4>
+		<div id="Content1"></div>
+	</div>
+	<div class="box">
+		<h2>Example 2:</h2>
+		<h4>Five divisions, styles looped.</h4>
+		<div id="Content2"></div>
+	</div>
+	<div class="box">
+		<h2>Example 3:</h2>
+		<h4>Three uneven divisions, with additional interaction. Percents written inside each division.</h4>
+		<div id="Content3"></div>	
+		<a id="Change" href="#">Change Percents</a>
+	</div>
+</body>
