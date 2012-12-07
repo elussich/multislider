@@ -76,7 +76,7 @@
 			this._setHandlers();
 
 			// callback for create event (eventName, event Object, uiObject)
-			this._trigger(this.events.onCreate, event, {
+			this._trigger(this.events.onCreate, null, {
 				container: self.container,
 				percents: self.options.percents
 			});
@@ -381,7 +381,7 @@
 				handler.addClass(self.options.overClass);
 				
 				// callback for handler over event (eventName, eventObject, uiObject)
-				self._trigger(self.events.onHandlerOver, event, {
+				self._trigger(self.events.onHandlerOver, null, {
 					handler: handler
 				});
 
@@ -394,7 +394,7 @@
 				handler.removeClass(self.options.overClass);				
 				
 				// callback for handler out event (eventName, eventObject, uiObject)
-				self._trigger(self.events.onHandlerOut, event, {
+				self._trigger(self.events.onHandlerOut, null, {
 					handler: handler
 				});
 
@@ -524,7 +524,7 @@
 			this._setHandlers();
 			
 			// callback for change percents event (eventName, eventObject, uiObject)
-			this._trigger(this.events.onChange, event, {
+			this._trigger(this.events.onChange, null, {
 				container: this.container,
 				percents: this.options.percents
 			});
