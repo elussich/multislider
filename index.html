@@ -1,21 +1,20 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Multiple Slider</title>
 	<link rel="stylesheet" type="text/css" href="css/jquery.multiSlider.css">
-	<link rel="stylesheet" type="text/css" href="css/styles.css"> 
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui-1.8.20.custom.min.js"></script>
 	<script type="text/javascript" src="js/jquery.ui.multislider.js"></script>
 	<script type="text/javascript">
-	
+
 		// on DOM ready
 		$(function() {
-		
+
 			// init with defaults
 			$('#Content1').multislider();
-			
+
 			// no names, two colors looped
 			$('#Content2').multislider(
 				{
@@ -63,12 +62,12 @@
 								ui.container.find('.multiSliderDivision').eq(i).find('span').text(ui.percents[i] + "%");
 							}
 						}
-					}					
-				);				
+					}
+				);
 				return false;
 
 			});
-			
+
 		});
 	</script>
 </head>
@@ -89,7 +88,7 @@
 	<div class="box">
 		<h2>Example 3:</h2>
 		<h4>Three uneven divisions, with additional interaction. Percents written inside each division.</h4>
-		<div id="Content3"></div>	
+		<div id="Content3"></div>
 		<a id="Change" href="#">Change Percents</a>
 	</div>
 </body>
